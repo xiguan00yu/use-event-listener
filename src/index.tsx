@@ -7,7 +7,8 @@ export function useEventListener<T extends HTMLElement>(
   l:
     | { [key: string]: (ev: HTMLElementEventMap[HTMLElementEventKey]) => any }
     | ((ev: HTMLElementEventMap[HTMLElementEventKey]) => any)[]
-    | ((ev: HTMLElementEventMap[HTMLElementEventKey]) => any)
+    | ((ev: HTMLElementEventMap[HTMLElementEventKey]) => any),
+  opt?: boolean | AddEventListenerOptions
 ) {
   const ref = useRef<T>(null)
 
@@ -18,7 +19,7 @@ export function useEventListener<T extends HTMLElement>(
     const els = typeof l === 'function' ? [l] : l
 
     ets.forEach((et: string, index) =>
-      ref.current?.addEventListener(et, els?.[et] || els[index])
+      ref.current?.addEventListener(et, els?.[et] || els[index], opt)
     )
 
     return () => {
