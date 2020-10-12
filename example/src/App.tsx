@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useEventListener } from 'use-event-listener'
+import { useEventListener } from '@link-hooks/use-event-listener'
 
 const Box = () => {
   const [hover, setHover] = useState(false)

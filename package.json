@@ -1,5 +1,5 @@
 {
-  "name": "use-event-listener",
+  "name": "@link-hooks/use-event-listener",
   "version": "1.0.0",
   "description": "window add event listener",
   "author": "xiguan00yu",
