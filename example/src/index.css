@@ -12,3 +12,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ct {
+  width: 50vw;
+  margin: 25vh auto;
+  text-align: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: palegreen;
+  margin: 0 auto;
+}
+
+.box.hover {
+  background: purple;
+}

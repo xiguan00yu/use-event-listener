@@ -14,14 +14,26 @@ npm install --save use-event-listener
 
 ```tsx
 import React, { Component } from 'react'
+import useEventListener from 'use-event-listener'
 
-import MyComponent from 'use-event-listener'
-import 'use-event-listener/dist/index.css'
+const Example = () => {
+  const [hover, setHover] = useState(false)
+  //  example-1
+  const ref = useEventListener<HTMLDivElement>(
+    ['mouseover', 'mouseleave'],
+    [() => setHover(true), () => setHover(false)]
+  )
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+  //  example-2
+  // const ref = useEventListener<HTMLDivElement>(['mouseover', 'mouseleave'], {
+  //   mouseover: () => setHover(true),
+  //   mouseleave: () => setHover(false)
+  // })
+
+  //  example-3
+  // const ref = useEventListener<HTMLDivElement>('mouseover', ) => setHover(true))
+
+  return <div className={`box ${hover ? 'hover' : ''}`} ref={ref} />
 }
 ```
 

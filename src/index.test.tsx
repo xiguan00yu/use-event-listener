@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { useEventListener } from '.'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(useEventListener).toBeTruthy()
   })
 })
